@@ -1,3 +1,65 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #5c5c5c;
+}
 
+header {
+  margin-top: 60px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 5px;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  grid-column: 3/4;
+}
+nav a {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 160%;
+  color: #CDCDCD;
+  box-sizing: border-box;
+}
+nav a:hover {
+  color: #FAFAFA;
+}
+nav .active {
+  border-bottom: 3px solid #F1CDB3;
+}
+
+.logo {
+  width: auto;
+}
+.logo p {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  line-height: 15px;
+  margin: 0px;
+}
+.logo h1 {
+  margin: 0px;
+  font-family: "Georgia";
+  letter-spacing: 0.06em;
+  font-size: 32px;
+  line-height: 110%;
+  margin-bottom: 10px;
+  color: #F1CDB3;
+  font-weight: 400;
+}
 
 /*# sourceMappingURL=style.css.map */

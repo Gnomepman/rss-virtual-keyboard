@@ -1,0 +1,81 @@
+$default-font: Arial, Helvetica, sans-serif;
+$primary-color: #F1CDB3;
+$default-link-color: #CDCDCD;
+$link-color-hover: #FAFAFA;
+
+
+body{
+  font-family: $default-font;
+  //temp
+  background-color: #5c5c5c;
+}
+
+header{
+  margin-top: 60px;
+}
+
+.container{
+  margin: 0 auto;
+  width: 1200px;
+}
+
+header{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+nav{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 5px;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  grid-column: 3 / 4;
+
+  a{
+    text-decoration: none;
+    font-family: $default-font;
+    font-size: 15px;
+    line-height: 160%;
+    color: $default-link-color;
+    box-sizing: border-box;
+
+    &:hover{
+      color: $link-color-hover;
+    }
+
+    // &:active{
+    //   border-bottom: 3px solid $primary-color;
+    // }
+
+  }
+
+  .active{
+    border-bottom: 3px solid $primary-color;
+  }
+  
+}
+
+.logo{
+  width: auto;
+
+  p{
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    line-height: 15px;
+    margin: 0px;
+  }
+
+  h1{
+    margin: 0px;
+    font-family: 'Georgia';
+    letter-spacing: 0.06em;
+    font-size: 32px;
+    line-height: 110%;
+    margin-bottom: 10px;
+    color: $primary-color;
+    font-weight: 400;
+  }
+}
