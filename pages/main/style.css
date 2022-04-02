@@ -1,10 +1,9 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #5c5c5c;
 }
 
 header {
-  margin-top: 60px;
+  padding-top: 60px;
 }
 
 .container {
@@ -14,7 +13,7 @@ header {
 
 header {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
 }
 
@@ -34,12 +33,14 @@ nav a {
   line-height: 160%;
   color: #CDCDCD;
   box-sizing: border-box;
+  width: auto;
 }
 nav a:hover {
   color: #FAFAFA;
 }
 nav .active {
   border-bottom: 3px solid #F1CDB3;
+  color: #FAFAFA;
 }
 
 .logo {
@@ -50,6 +51,7 @@ nav .active {
   letter-spacing: 0.1em;
   line-height: 15px;
   margin: 0px;
+  color: #FFFFFF;
 }
 .logo h1 {
   margin: 0px;
@@ -60,6 +62,50 @@ nav .active {
   margin-bottom: 10px;
   color: #F1CDB3;
   font-weight: 400;
+}
+
+.start-screen {
+  background-image: url("../../assets/images/start-screen-background.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.start-screen_content {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.start-screen_content .content {
+  margin-top: 163px;
+  width: 460px;
+}
+.start-screen_content .content h2 {
+  margin: 0;
+  font-family: Georgia;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 130%;
+  width: 310px;
+  color: #FFFFFF;
+}
+.start-screen_content .content p {
+  margin-top: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  color: #CDCDCD;
+}
+.start-screen_content .content button {
+  margin-top: 42px;
+  border: none;
+  border-radius: 100px;
+  padding: 15px 45px;
+  background: #F1CDB3;
+  font-family: Georgia;
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: 6%;
 }
 
 /*# sourceMappingURL=style.css.map */
