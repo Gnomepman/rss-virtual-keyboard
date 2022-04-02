@@ -2,16 +2,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-header {
-  padding-top: 60px;
-}
-
 .container {
   margin: 0 auto;
   width: 1200px;
 }
 
 header {
+  padding-top: 60px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
@@ -106,6 +103,42 @@ nav .active {
   font-weight: 400;
   font-size: 17px;
   letter-spacing: 6%;
+}
+.start-screen_content .content button:hover {
+  cursor: pointer;
+  background: #FDDCC4;
+}
+
+.about {
+  background-color: #ffffff;
+}
+.about .content {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+.about .content .description {
+  width: 430px;
+}
+.about .content h2 {
+  font-family: Georgia;
+  font-weight: 400;
+  font-size: 35px;
+  color: #545454;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  width: 370px;
+}
+.about .content p {
+  color: #4C4C4C;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
 }
 
 /*# sourceMappingURL=style.css.map */
