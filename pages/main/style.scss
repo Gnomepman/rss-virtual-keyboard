@@ -3,6 +3,12 @@ $primary-color: #F1CDB3;
 $default-link-color: #CDCDCD;
 $link-color-hover: #FAFAFA;
 
+@mixin header-2 {
+  font-family: Georgia;
+  font-weight: 400;
+  line-height: 130%;
+}
+
 
 body{
   font-family: $default-font;
@@ -94,13 +100,11 @@ nav{
     width: 460px;
 
     h2{
-      margin: 0;
-      font-family: Georgia;
+      margin: 0;   
       font-size: 44px;
-      font-weight: 400;
-      line-height: 130%;
       width: 310px;
       color: #FFFFFF;
+      @include header-2();
     }
 
     p{
@@ -147,11 +151,9 @@ nav{
     }
 
     h2{
-      font-family: Georgia;
-      font-weight: 400;
+      @include header-2();
       font-size: 35px;
       color: #545454;
-      line-height: 130%;
       letter-spacing: 0.06em;
       width: 370px;
     }
@@ -165,5 +167,125 @@ nav{
       line-height: 160%;
     }
   }
+}
+
+.our-friends{
+  background: #F6F6F6;
+  padding-top: 80px;
+  padding-bottom: 100px;
+
+  .rest-button{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  a{
+    text-decoration: none;
+    color: #292929;
+    background-color: $primary-color;
+    padding: 15px 45px;
+    @include header-2();
+    font-size: 17px;
+    letter-spacing: 0.06em;
+    border-radius: 100px;
+
+    &:hover{
+      cursor: pointer;
+      background-color: #FDDCC4;
+    }
+  }
+
+  h2{
+    @include header-2();
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 35px;
+    letter-spacing: 0.06em;
+    color: #545454;
+  }
+
+  .content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    grid-column-gap: 53px;
+  }
+
+  .arrow-left, .arrow-right{
+    width: 52px;
+    height: 52px;
+    border: 2px solid $primary-color;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    background-position: center center;
+
+    &:hover{
+      background-color: #FDDCC4;
+      cursor: pointer;
+    }
+  }
   
+  .arrow-left{
+    background-image: url(../../assets/icons/Arrow-left.svg);
+    
+  }
+
+  .arrow-right{
+    background-image: url(../../assets/icons/Arrow-right.svg);
+  }
+
+  .wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 90px;
+    margin-top: 60px;
+  }
+
+  .card{
+    display: grid;
+    grid-template-rows: 1fr auto auto;
+    border-radius: 9px;
+    background: #FAFAFA;
+    justify-items: center;
+    padding-bottom: 30px;
+
+    &:hover{
+      background-color: #FFFFFF;
+      cursor: pointer;
+    }
+
+    p{
+      margin: 0;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      text-align: center;
+      @include header-2();
+      font-size: 20px;
+      line-height: 23px;
+      color: #545454;
+    }
+
+    button {
+      border: 2px solid #F1CDB3;
+      box-sizing: border-box;
+      border-radius: 100px;
+      padding: 15px 45px;
+      width: 187px;
+      height: 52px;
+      background-color: #FAFAFA;
+      @include header-2();
+      letter-spacing: 6%;
+      color: #292929;
+
+      &:hover{
+        background-color: #FDDCC4;
+        cursor: pointer;
+      }
+    }
+  }
 }
