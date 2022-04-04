@@ -9,7 +9,6 @@ $link-color-hover: #FAFAFA;
   line-height: 130%;
 }
 
-
 body{
   font-family: $default-font;
 }
@@ -22,7 +21,6 @@ body{
 header{
   padding-top: 60px;
   display: grid;
-  // grid-template-columns: repeat(2, 1fr);
   grid-template-columns: auto 1fr;
   grid-template-rows: 1fr;
 
@@ -303,9 +301,6 @@ nav{
   .content{
     
     width: 1026px;
-    // margin: 0 auto;
-    // margin-top: 55px;
-
     margin: 55px auto 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -432,7 +427,6 @@ nav{
 
 footer{
   padding-top: 40px;
-  // min-height: 400px;
   background: radial-gradient(110.67% 538.64% at 5.73% 50%, 
   #513D2F 0%, #1A1A1C 100%),#211F20;
 
