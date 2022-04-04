@@ -424,3 +424,54 @@ nav{
   }
 
 }
+
+footer{
+  padding-top: 40px;
+  // min-height: 400px;
+  background: radial-gradient(110.67% 538.64% at 5.73% 50%, 
+  #513D2F 0%, #1A1A1C 100%),#211F20;
+
+  .content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+
+    .element{
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      grid-column-gap: 20px;
+      margin-top: 32px;
+      height: 52px;
+
+      a{
+        text-decoration: none;
+        color: $default-font;
+        @include header-2();
+        font-size: 20px;
+        color: $primary-color;
+      }
+    }
+
+    h3{
+      @include header-2();
+      font-size: 35px;
+      color: #ffffff;
+      letter-spacing: 6%;
+      margin: 0;
+    }
+  }
+
+  .contacts{
+    justify-self: start;
+    width: 280px;
+  }
+
+  .location{
+    width: 302px;
+  }
+
+  img{
+    justify-self: end;
+  }
+}
