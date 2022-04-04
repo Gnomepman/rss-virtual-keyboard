@@ -337,3 +337,90 @@ nav{
   }
 
 }
+
+.donation {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  background: #F6F6F6;
+
+  .content {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+    align-items: center;
+    justify-items: center;
+
+    .donation-dog {
+      justify-self: end;
+    }
+  }
+
+  .content-description {
+    width: 380px;
+    justify-self: start;
+    align-self: start;
+
+    h2 {
+      @include header-2();
+      letter-spacing: 6%;
+      font-size: 35px;
+      color: #545454;
+      width: 300px;
+      margin: 0;
+    }
+
+    .bank-name {
+      @include header-2();
+      font-size: 15px;
+      line-height: 110%;
+      height: 23px;
+      letter-spacing: 6%;
+      color: #545454;
+      margin: 0;
+      margin-top: 20px;
+    }
+
+    .credit-card{
+      margin-top: 20px;
+
+      .credit-card-link {
+        padding: 10px 15px;
+        width: 320px;
+        border-radius: 9px;
+        display: grid;
+        grid-template-columns: 30px auto;
+        grid-column-gap: 15px;
+        background: $primary-color;
+        align-items: center;
+        align-content: center;
+        text-decoration: none;
+        color: #545454;
+        display: flex;
+  
+        p {
+          display: flex;
+          align-items: center;
+          font-size: 20px;
+          margin: 0;
+          font-family: Georgia;
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 23px;
+          letter-spacing: 0.06em;
+        }
+      }
+    }
+
+    .legal-information{
+      font-family: Arial;
+      font-size: 12px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 18px;
+      margin-top: 20px;
+      color: #B2B2B2;
+    }
+  }
+
+}
