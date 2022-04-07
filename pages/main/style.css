@@ -226,6 +226,10 @@ nav .active {
   background-color: #FFFFFF;
   cursor: pointer;
 }
+.our-friends .card:hover button {
+  background-color: #FDDCC4;
+  cursor: pointer;
+}
 .our-friends .card p {
   margin: 0;
   margin-top: 30px;

@@ -260,6 +260,11 @@ nav{
     &:hover{
       background-color: #FFFFFF;
       cursor: pointer;
+  
+      button{
+        background-color: #FDDCC4;
+        cursor: pointer;
+      }
     }
 
     p{
