@@ -1,0 +1,227 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  min-height: 120px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr;
+  position: sticky;
+}
+header a {
+  text-decoration: none;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 5px;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  grid-column: 3/4;
+}
+nav a {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 160%;
+  color: #545454;
+  box-sizing: border-box;
+  width: auto;
+}
+nav a:hover {
+  color: #292929;
+}
+nav .active {
+  border-bottom: 3px solid #F1CDB3;
+  color: #292929;
+}
+
+.logo {
+  width: auto;
+}
+.logo p {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  line-height: 15px;
+  margin: 0px;
+  color: #292929;
+}
+.logo h1 {
+  margin: 0px;
+  font-family: "Georgia";
+  letter-spacing: 0.06em;
+  font-size: 32px;
+  line-height: 110%;
+  margin-bottom: 10px;
+  color: #F1CDB3;
+  font-weight: 400;
+}
+
+.pets {
+  background-color: #F6F6F6;
+  padding: 80px 0 100px 0;
+}
+.pets h2 {
+  font-family: Georgia;
+  font-weight: 400;
+  line-height: 130%;
+  font-size: 35px;
+  letter-spacing: 0.06em;
+  color: #545454;
+  text-align: center;
+  width: 400px;
+  margin: 0;
+}
+.pets .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pets .pagination {
+  margin-top: 45px;
+  display: grid;
+  grid-template-columns: repeat(5, 52px);
+  grid-column-gap: 20px;
+}
+.pets .pagination .element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 100px;
+  border: 2px solid #F1CDB3;
+  font-family: Georgia;
+  font-weight: 400;
+  line-height: 130%;
+  color: #292929;
+  font-size: 20px;
+  line-height: 115%;
+}
+.pets .pagination .element:hover {
+  cursor: pointer;
+}
+.pets .pagination .disabled {
+  border-color: #CDCDCD;
+  color: #CDCDCD;
+}
+.pets .pagination .fill {
+  background-color: #F1CDB3;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 30px;
+  margin-top: 60px;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  border-radius: 9px;
+  background: #FAFAFA;
+  justify-items: center;
+  padding-bottom: 30px;
+  min-width: 270px;
+}
+.card:hover {
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+.card p {
+  margin: 0;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: Georgia;
+  font-weight: 400;
+  line-height: 130%;
+  font-size: 20px;
+  line-height: 23px;
+  color: #545454;
+}
+.card button {
+  border: 2px solid #F1CDB3;
+  box-sizing: border-box;
+  border-radius: 100px;
+  padding: 15px 45px;
+  width: 187px;
+  height: 52px;
+  background-color: #FAFAFA;
+  font-family: Georgia;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 6%;
+  color: #292929;
+}
+.card button:hover {
+  background-color: #FDDCC4;
+  cursor: pointer;
+}
+
+footer {
+  padding-top: 40px;
+  background: radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+}
+footer .content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+footer .content .element {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  grid-column-gap: 20px;
+  margin-top: 32px;
+  height: 52px;
+}
+footer .content .element a {
+  text-decoration: none;
+  color: Arial, Helvetica, sans-serif;
+  font-family: Georgia;
+  font-weight: 400;
+  line-height: 130%;
+  font-size: 20px;
+  color: #F1CDB3;
+}
+footer .content h3 {
+  font-family: Georgia;
+  font-weight: 400;
+  line-height: 130%;
+  font-size: 35px;
+  color: #ffffff;
+  letter-spacing: 6%;
+  margin: 0;
+}
+footer .contacts {
+  justify-self: start;
+  width: 280px;
+}
+footer .location {
+  width: 302px;
+}
+footer img {
+  justify-self: end;
+}
+
+/*# sourceMappingURL=style.css.map */
