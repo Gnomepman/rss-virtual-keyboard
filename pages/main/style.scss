@@ -111,7 +111,8 @@ nav{
     }
 
     p{
-      margin-top: 32px;
+      margin-top: 42px;
+      margin-bottom: 0px;
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 400;
       font-size: 15px;
@@ -129,6 +130,8 @@ nav{
       font-weight: 400;
       font-size: 17px;
       letter-spacing: 6%;
+      width: 207px;
+      height: 52px;
 
       &:hover{
         cursor: pointer;
@@ -155,6 +158,8 @@ nav{
 
     h2{
       @include header-2();
+      margin-top: 14px;
+      margin-bottom: 0px;
       font-size: 35px;
       color: #545454;
       letter-spacing: 0.06em;
@@ -168,6 +173,8 @@ nav{
       font-weight: 400;
       font-size: 15px;
       line-height: 160%;
+      margin-top: 25px;
+      margin-bottom: 0px;
     }
   }
 }
