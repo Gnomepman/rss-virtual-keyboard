@@ -3,6 +3,10 @@ $primary-color: #F1CDB3;
 $default-link-color: #CDCDCD;
 $link-color-hover: #FAFAFA;
 
+html{
+  scroll-behavior: smooth;
+}
+
 @mixin header-2 {
   font-family: Georgia;
   font-weight: 400;
