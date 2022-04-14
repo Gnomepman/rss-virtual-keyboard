@@ -150,6 +150,7 @@ nav .active {
 .card:hover {
   background-color: #FFFFFF;
   cursor: pointer;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 .card:hover button {
   background-color: #FDDCC4;

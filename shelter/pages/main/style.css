@@ -236,6 +236,7 @@ nav .active {
 .our-friends .card:hover {
   background-color: #FFFFFF;
   cursor: pointer;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 .our-friends .card:hover button {
   background-color: #FDDCC4;
@@ -373,6 +374,9 @@ nav .active {
   text-decoration: none;
   color: #545454;
   display: flex;
+}
+.donation .content-description .credit-card .credit-card-link:hover {
+  background: #FDDCC4;
 }
 .donation .content-description .credit-card .credit-card-link p {
   display: flex;
