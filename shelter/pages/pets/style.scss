@@ -141,7 +141,7 @@ nav {
       line-height: 115%;
 
       &:hover{
-        cursor: pointer;
+        cursor: default;
       }
       
     }
@@ -149,10 +149,21 @@ nav {
     .disabled{
       border-color: #CDCDCD;
       color: #CDCDCD;
+
+      // &:hover{
+      //   cursor: default;
+      // }
     }
 
     .fill{
       background-color: $primary-color;
+    }
+
+    .active{
+      &:hover{
+        background-color: #FDDCC4;
+        cursor: pointer;
+      }
     }
   }
 }

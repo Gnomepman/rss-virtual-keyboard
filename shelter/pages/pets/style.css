@@ -119,7 +119,7 @@ nav .active {
   line-height: 115%;
 }
 .pets .pagination .element:hover {
-  cursor: pointer;
+  cursor: default;
 }
 .pets .pagination .disabled {
   border-color: #CDCDCD;
@@ -127,6 +127,10 @@ nav .active {
 }
 .pets .pagination .fill {
   background-color: #F1CDB3;
+}
+.pets .pagination .active:hover {
+  background-color: #FDDCC4;
+  cursor: pointer;
 }
 
 .wrapper {
