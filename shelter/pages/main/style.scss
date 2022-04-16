@@ -26,6 +26,7 @@ header{
   padding-top: 60px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   a{
     text-decoration: none;
@@ -68,10 +69,51 @@ nav{
   }
 
   .active{
+    width: fit-content;
     border-bottom: 3px solid $primary-color;
     color: $link-color-hover;
   }
   
+}
+
+.menu{
+  transform: translateX(100%);
+  position: fixed;
+	top: 0;
+	right: 0;
+	width: 310px;
+	height: 100%;
+  background-color: #292929;
+  padding-left: 10px;
+	
+	transition: transform 0.4s; 
+
+  .burger{
+    transform: rotate(90deg);
+    // width: 30px;
+    // height: 30px;
+  }
+
+  .menu_wrapper{
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    align-items: center;
+    margin-top: 158px;
+
+    .active{
+      color: #FAFAFA;
+    }
+
+    a{
+      font-size: 32px;
+      color: #CDCDCD;
+    }
+  }
+}
+
+.activate {
+	transform: translateX(0);
 }
 
 .logo{

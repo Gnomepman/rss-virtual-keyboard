@@ -23,6 +23,7 @@ body {
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 header a {
   text-decoration: none;
@@ -56,8 +57,52 @@ nav a:last-child {
   margin-right: 0;
 }
 nav .active {
+  width: fit-content;
   border-bottom: 3px solid #F1CDB3;
   color: #292929;
+}
+
+.menu {
+  transform: translateX(100%);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 310px;
+  height: 100%;
+  background-color: #292929;
+  padding-left: 10px;
+  transition: transform 0.4s;
+}
+.menu .burger {
+  transform: rotate(90deg);
+  background-image: url(../../assets/icons/burger.svg);
+}
+.menu .menu_wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  align-items: center;
+  margin-top: 158px;
+}
+.menu .menu_wrapper .active {
+  color: #FAFAFA;
+}
+.menu .menu_wrapper a {
+  font-size: 32px;
+  color: #CDCDCD;
+}
+.menu .logo {
+  width: auto;
+}
+.menu .logo p {
+  color: #FFFFFF;
+}
+.menu .logo h1 {
+  color: #F1CDB3;
+}
+
+.activate {
+  transform: translateX(0);
 }
 
 .logo {
