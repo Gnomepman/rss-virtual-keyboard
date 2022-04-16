@@ -27,6 +27,12 @@ header {
 header a {
   text-decoration: none;
 }
+header .burger {
+  background-image: url(../../assets/icons/Burger-dark.svg);
+  width: 30px;
+  height: 22px;
+  display: none;
+}
 
 nav {
   display: flex;
@@ -258,6 +264,77 @@ footer img {
     display: grid;
     grid-template-rows: repeat(3, auto);
     row-gap: 40px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .container {
+    width: 300px;
+  }
+
+  header {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    column-gap: 43px;
+    justify-content: flex-start;
+  }
+  header .burger {
+    display: block;
+  }
+
+  nav > a {
+    display: none;
+  }
+
+  .pets {
+    padding: 42px 0 42px 0;
+  }
+  .pets .card:nth-child(n+4) {
+    display: none;
+  }
+  .pets h2 {
+    font-size: 25px;
+    width: 286px;
+  }
+  .pets .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .pets .pagination {
+    column-gap: 10px;
+  }
+
+  footer {
+    padding-top: 30px;
+  }
+  footer .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 60px;
+    row-gap: 40px;
+  }
+  footer .content .element {
+    margin-top: 0;
+    display: flex;
+  }
+  footer .content .element a {
+    width: auto;
+  }
+  footer .contacts, footer .location {
+    display: flex;
+    row-gap: 40px;
+    align-items: center;
+    flex-direction: column;
+  }
+  footer .contacts h3, footer .location h3 {
+    text-align: center;
+    font-size: 25px;
+  }
+  footer .location {
+    align-items: flex-start;
+  }
+  footer .footer-puppy {
+    width: 80%;
   }
 }
 

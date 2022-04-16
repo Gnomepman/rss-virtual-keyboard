@@ -39,6 +39,13 @@ header {
   a {
     text-decoration: none;
   }
+
+  .burger{
+    background-image: url(../../assets/icons/Burger-dark.svg);
+    width: 30px;
+    height: 22px;
+    display: none;
+  }
 }
 
 nav {
@@ -322,5 +329,88 @@ footer {
 
 //320px <= width < 768px
 @media (min-width: 320px) and (max-width: 767px) {
-   
+  .container{
+    width: 300px;
+  }
+
+  header{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    column-gap: 43px;
+    justify-content: flex-start;
+
+    .burger{
+      display: block;
+    }
+  }
+
+  nav > a{
+    display: none;
+  }
+
+  .pets{
+    padding: 42px 0 42px 0;
+
+    .card:nth-child(n+4) {
+      display: none; 
+    }
+
+    h2{
+      font-size: 25px;
+      width: 286px;
+    }
+
+    .wrapper{
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    .pagination{
+      column-gap: 10px;
+    }
+  }
+  footer{
+    padding-top: 30px;
+
+    .content{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      column-gap: 60px;
+      row-gap: 40px;
+
+      .element{
+        margin-top: 0;
+        display: flex;
+
+        a{
+          width: auto;
+        }
+      }
+    }
+
+    .contacts, .location{
+      // display: grid;
+      // grid-template-rows: repeat(3, auto);
+      // row-gap: 40px;
+      // align-content: center;
+      display: flex;
+      row-gap: 40px;
+      align-items: center;
+      flex-direction: column;
+      
+      h3{
+        text-align: center;
+        font-size: 25px;
+      }
+    }
+
+    .location{
+      align-items: flex-start;
+    }
+
+    .footer-puppy{
+      width: 80%;
+    }
+  }
 }

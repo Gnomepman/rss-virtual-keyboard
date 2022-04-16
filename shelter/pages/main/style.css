@@ -539,6 +539,8 @@ footer img {
 
   header {
     padding-top: 30px;
+    column-gap: 43px;
+    justify-content: flex-start;
   }
   header .burger {
     display: block;
