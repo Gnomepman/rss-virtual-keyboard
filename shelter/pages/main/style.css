@@ -19,6 +19,12 @@ header {
 header a {
   text-decoration: none;
 }
+header .burger {
+  background-image: url(../../assets/icons/burger.svg);
+  width: 30px;
+  height: 22px;
+  display: none;
+}
 
 nav {
   display: flex;
@@ -295,6 +301,7 @@ nav .active {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  align-items: center;
 }
 .help .element img {
   width: auto;
@@ -349,6 +356,7 @@ nav .active {
 }
 .donation .content-description .credit-card {
   margin-top: 20px;
+  width: 100%;
 }
 .donation .content-description .credit-card .credit-card-link {
   padding: 10px 15px;
@@ -522,6 +530,208 @@ footer img {
     display: grid;
     grid-template-rows: repeat(3, auto);
     row-gap: 40px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .container {
+    width: 300px;
+  }
+
+  header {
+    padding-top: 30px;
+  }
+  header .burger {
+    display: block;
+  }
+
+  nav > a {
+    display: none;
+  }
+
+  .start-screen {
+    height: auto;
+  }
+
+  .start-screen_content {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+    height: 100%;
+  }
+  .start-screen_content .content {
+    margin-top: 60px;
+    width: auto;
+  }
+  .start-screen_content .content h2 {
+    font-size: 25px;
+    width: 250px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .start-screen_content .content a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+  }
+  .start-screen_content .content p {
+    text-align: center;
+  }
+
+  .main-dog {
+    margin-top: 105px;
+    width: 80%;
+    display: flex;
+    align-self: flex-end;
+  }
+
+  .about .content {
+    flex-direction: column-reverse;
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  .about .content img {
+    margin-top: 80px;
+  }
+  .about .content .description {
+    width: 84%;
+    padding: 0;
+  }
+  .about .content .description h2 {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 25px;
+    width: auto;
+  }
+  .about .content .description p {
+    text-align: justify;
+  }
+
+  .our-friends {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  .our-friends h2 {
+    width: auto;
+    font-size: 25px;
+  }
+  .our-friends .content {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    row-gap: 20px;
+    justify-items: center;
+  }
+  .our-friends .content .wrapper {
+    grid-column: 1/3;
+  }
+  .our-friends .content .wrapper .card:not(:first-child) {
+    display: none;
+  }
+  .our-friends .arrow-left {
+    order: 1;
+    align-self: start;
+  }
+  .our-friends .arrow-right {
+    order: 2;
+    align-self: end;
+  }
+  .our-friends .rest-button {
+    margin-top: 42px;
+  }
+
+  .help {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  .help .content {
+    margin-top: 42px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    column-gap: 30px;
+    row-gap: 30px;
+    width: auto;
+  }
+  .help .element {
+    width: 130px;
+    align-items: center;
+  }
+
+  .donation {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  .donation .content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .donation .content .donation-dog {
+    margin-top: 42px;
+    width: 100%;
+  }
+  .donation .content-description {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .donation .content-description h2 {
+    font-size: 25px;
+    margin: 0 auto;
+    text-align: center;
+    width: 220px;
+  }
+  .donation .content-description .credit-card img {
+    width: auto;
+  }
+  .donation .content-description .credit-card .credit-card-link {
+    width: auto;
+    display: grid;
+    grid-template-columns: 30px auto;
+    column-gap: 15px;
+  }
+  .donation .content-description .credit-card .credit-card-link p {
+    font-size: 15px;
+  }
+  .donation .content-description .legal-information {
+    margin-bottom: 0;
+    text-align: justify;
+  }
+  .donation .content-description .bank-name {
+    text-align: center;
+  }
+
+  footer {
+    padding-top: 30px;
+  }
+  footer .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 60px;
+    row-gap: 40px;
+  }
+  footer .content .element {
+    margin-top: 0;
+    display: flex;
+  }
+  footer .content .element a {
+    width: auto;
+  }
+  footer .contacts, footer .location {
+    display: flex;
+    row-gap: 40px;
+    align-items: center;
+    flex-direction: column;
+  }
+  footer .contacts h3, footer .location h3 {
+    text-align: center;
+    font-size: 25px;
+  }
+  footer .location {
+    align-items: flex-start;
+  }
+  footer .footer-puppy {
+    width: 80%;
   }
 }
 
