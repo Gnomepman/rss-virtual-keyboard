@@ -174,9 +174,6 @@ nav .active {
   border-color: #CDCDCD;
   color: #CDCDCD;
 }
-.pets .pagination .fill {
-  background-color: #F1CDB3;
-}
 .pets .pagination .active:hover {
   background-color: #FDDCC4;
   cursor: pointer;
