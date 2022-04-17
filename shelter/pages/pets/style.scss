@@ -217,6 +217,10 @@ nav {
       // }
     }
 
+    .fill{
+      background-color: $primary-color;
+    }
+
     .active{
       &:hover{
         background-color: #FDDCC4;
