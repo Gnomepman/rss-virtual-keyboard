@@ -10,21 +10,45 @@
     <script src="script.js" defer></script>
     <title>Our pets</title>
 </head>
+
 <body>
+
     <section class="header">
         <div class="container">
             <header>
                 <div class="logo">
                     <a href="../../pages/main/index.html">
-                        <p><h1>Cozy House</h1></p>
+                        <p>
+                            <h1>Cozy House</h1>
+                        </p>
                         <p>Shelter for pets in Boston</p>
                     </a>
                 </div>
                 <nav>
-                    <a href="../../pages/main/index.html" >About the shelter</a>
+                    <a href="../../pages/main/index.html">About the shelter</a>
                     <a href="" class="active">Our pets</a>
                     <a href="../../pages/main/index.html#help">Help the shelter</a>
                     <a href="#contacts">Contacts</a>
+                    <div class="burger" id="menu-open"></div>
+                    <div class="menu" id="menu">
+                        <header>
+                            <div class="logo">
+                                <a href="">
+                                    <p>
+                                        <h1>Cozy House</h1>
+                                    </p>
+                                    <p>Shelter for pets in Boston</p>
+                                </a>
+                            </div>
+                            <div class="burger" id="menu-close"></div>
+                        </header>
+                        <div class="menu_wrapper">
+                            <a href="">About the shelter</a>
+                            <a href="../../pages/pets/index.html" class="active">Our pets</a>
+                            <a href="#help">Help the shelter</a>
+                            <a href="#contacts">Contacts</a>
+                        </div>
+                    </div>
                 </nav>
             </header>
         </div>
@@ -32,8 +56,7 @@
 
     <section class="pets">
         <div class="container">
-            <h2>Our friends who
-                are looking for a house</h2>
+            <h2>Our friends who are&nbsp;looking for a house</h2>
             <div class="wrapper">
                 <div class="card">
                     <img src="../../assets/images/pets-katrine.png" alt="">
@@ -77,11 +100,21 @@
                 </div>
             </div>
             <div class="pagination">
-                <div class="element disabled"><</div>
-                <div class="element disabled"><<</div>
-                <div class="element fill">1</div>
-                <div class="element">></div>
-                <div class="element">>></div>
+                <div class="element disabled">
+                    <span><<</span>
+                </div>
+                <div class="element disabled">
+                    <span><</span>
+                </div>
+                <div class="element fill">
+                     <span>1</span>
+                </div>
+                <div class="element active">
+                     <span>></span>
+                </div>
+                <div class="element active">
+                     <span>>></span>
+                </div>
             </div>
         </div>
     </section>
@@ -90,7 +123,7 @@
         <div class="container">
             <div class="content">
                 <div class="contacts" id="contacts">
-                    <h3>For questions and suggestions</h3>
+                    <h3>For questions and&nbsp;suggestions</h3>
                     <div class="element">
                         <img src="../../assets/icons/icon-email.svg" alt="">
                         <a href="mailto:email@shelter.com">email@shelter.com</a>
@@ -101,7 +134,7 @@
                     </div>
                 </div>
                 <div class="location">
-                    <h3>We are waiting for your visit</h3>
+                    <h3>We are waiting for&nbsp;your visit</h3>
                     <div class="element">
                         <img src="../../assets/icons/icon-marker.svg" alt="">
                         <a target="_blank"
@@ -119,6 +152,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>
