@@ -55,6 +55,11 @@ nav .active {
 
 .menu {
   transform: translateX(100%);
+  transition: transform 0s;
+}
+
+.menu {
+  transform: translateX(100%);
   position: fixed;
   top: 0;
   right: 0;
