@@ -90,6 +90,9 @@ nav .active {
 .activate {
   transform: translateX(0);
 }
+.activatehtml {
+  overflow-y: hidden;
+}
 
 .logo {
   width: auto;

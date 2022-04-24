@@ -4,10 +4,12 @@ let menu = document.getElementById('menu');
 
 menuActivate.addEventListener('click', function(){
     menu.classList.toggle('activate');
+    document.querySelector('html').style.overflow = 'hidden';
 });
 
 menuDeactivate.addEventListener('click', function(){
     menu.classList.toggle('activate');
+    document.querySelector('html').style.overflow = 'scroll';
 });
 
 let pets = [
