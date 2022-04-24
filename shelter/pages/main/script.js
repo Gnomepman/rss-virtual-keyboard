@@ -107,6 +107,12 @@ let pets = [
 
 let card = [0,1,2];
 arrow_right.onclick = function(){
+    card_area.style.transform = 'translateX(-5%)';
+    card_area.style.transition = 'transform 0.5s'
+    setTimeout(right, 500);
+};
+
+function right(){
     while (card_area.firstChild) {
         card_area.removeChild(card_area.firstChild);
     }
@@ -133,18 +139,17 @@ arrow_right.onclick = function(){
         card.append(button);
         card_area.append(card);
     }
-};
+    card_area.style.transition = 'transform 0.2s'
+    card_area.style.transform = 'none';
+}
 
 arrow_left.onclick = function(){
-    //const screenWidth = window.screen.width;
-    //let count = 0;
-    // if (screenWidth >= 1280){
-    //     count = 3;
-    // }else if (screenWidth >= 768){
-    //     count = 2;
-    // }else{
-    //     count = 1;
-    // }
+    card_area.style.transform = 'translateX(5%)';
+    card_area.style.transition = 'transform 0.5s'
+    setTimeout(left, 500);
+};
+
+function left(){
     while (card_area.firstChild) {
         card_area.removeChild(card_area.firstChild);
     }
@@ -171,7 +176,9 @@ arrow_left.onclick = function(){
         card.append(button);
         card_area.append(card);
     }
-};
+    card_area.style.transition = 'transform 0.2s'
+    card_area.style.transform = 'none';
+}
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
