@@ -220,6 +220,7 @@ function addNewCards() {
     for (let i = 0; i < 48 / max_pages; ++i){
         let card = document.createElement('div');
         card.classList.add('card');
+        card.id = pets[shuffle[48/max_pages * (pages-1) + i]].name;
         let img = document.createElement('img');
         img.src = pets[shuffle[48/max_pages * (pages-1) + i]].img;
         card.append(img);

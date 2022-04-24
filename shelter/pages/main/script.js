@@ -128,6 +128,7 @@ function right(){
     for (let i = 0; i < 3; i++){
         let card = document.createElement("div");
         card.classList.add('card');
+        card.id = pets[temp[i]].name;
         let img = document.createElement('img');
         img.src = pets[temp[i]].img;
         card.append(img)
@@ -165,6 +166,7 @@ function left(){
     for (let i = 0; i < 3; i++){
         let card = document.createElement("div");
         card.classList.add('card');
+        card.id = pets[temp[i]].name;
         let img = document.createElement('img');
         img.src = pets[temp[i]].img;
         card.append(img)
