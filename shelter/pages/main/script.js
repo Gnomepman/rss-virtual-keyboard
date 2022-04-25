@@ -1,25 +1,38 @@
 let menuActivate = document.getElementById('menu-open');
 let menuDeactivate = document.getElementById('menu-close');
 let menu = document.getElementById('menu');
+let popup = document.getElementById('popup');
+let close = document.querySelector('close');
 
 menuActivate.addEventListener('click', function(){
     menu.classList.toggle('activate');
-    document.querySelector('html').style.overflow = 'hidden';
+    document.querySelector('html').style.overflowY = 'hidden';
 });
 
 menuDeactivate.addEventListener('click', function(){
     menu.classList.toggle('activate');
-    document.querySelector('html').style.overflow = 'scroll';
+    document.querySelector('html').style.overflowY = 'scroll';
 });
 
 document.onclick = function(e){
-    if (e.target.id !== menu && 
-        !e.path.includes(menuActivate) &&
-        !e.path.includes(menu)){
-        menu.classList.remove('activate');
-        document.querySelector('html').style.overflow = 'scroll';
+    if (menu.classList.contains('activate')) {
+        console.log(e);
+        if (e.target.id !== menu &&
+            !e.path.includes(menuActivate) && !e.path.includes(menu)) {
+            menu.classList.remove('activate');
+            document.querySelector('html').style.overflowY = 'scroll';
+        }
+    } else if (popup.style.display === "flex") {
+        console.log(e);
+        if (e.target.id !== popup_window &&
+            !e.path.includes(document.getElementById('card-area')) &&
+            !e.path.includes(document.getElementById('popup_window'))) {
+            popup.style.display = "none";
+            document.querySelector('html').style.overflowY = 'scroll';
+        }
     }
 }
+
 
 let arrow_left = document.getElementById("arrow-left");
 let arrow_right = document.getElementById("arrow-right");
@@ -119,48 +132,16 @@ let card = [0,1,2];
 arrow_right.onclick = function(){
     card_area.style.transform = 'translateX(-5%)';
     card_area.style.transition = 'transform 0.5s'
-    setTimeout(right, 500);
+    setTimeout(newCards, 500);
 };
-
-function right(){
-    while (card_area.firstChild) {
-        card_area.removeChild(card_area.firstChild);
-    }
-
-    var temp = [];
-    while (temp.length !== 3){
-        let number = getRandomInt(pets.length);
-        if(!card.includes(number) && !temp.includes(number)){
-            temp.push(number);
-        }
-    }
-    card = temp;
-    for (let i = 0; i < 3; i++){
-        let card = document.createElement("div");
-        card.classList.add('card');
-        card.id = pets[temp[i]].name;
-        let img = document.createElement('img');
-        img.src = pets[temp[i]].img;
-        card.append(img)
-        let p  = document.createElement('p');
-        p.textContent = pets[temp[i]].name;
-        card.append(p);
-        let button = document.createElement('button');
-        button.textContent = 'Learn more';
-        card.append(button);
-        card_area.append(card);
-    }
-    card_area.style.transition = 'transform 0.2s'
-    card_area.style.transform = 'none';
-}
 
 arrow_left.onclick = function(){
     card_area.style.transform = 'translateX(5%)';
     card_area.style.transition = 'transform 0.5s'
-    setTimeout(left, 500);
+    setTimeout(newCards, 500);
 };
 
-function left(){
+function newCards(){
     while (card_area.firstChild) {
         card_area.removeChild(card_area.firstChild);
     }
@@ -185,6 +166,23 @@ function left(){
         card.append(p);
         let button = document.createElement('button');
         button.textContent = 'Learn more';
+
+        button.onclick = function(){
+            document.querySelector('html').style.overflowY = 'hidden';
+            popup.style.display = "flex";
+            popup.children[0].onclick = function(){
+                document.querySelector('html').style.overflowY = 'scroll';
+                popup.style.display = "none";
+            }
+            popup.children[1].children[0].src =  pets[temp[i]].img;
+            popup.children[1].children[1].children[0].textContent = pets[temp[i]].name;
+            popup.children[1].children[1].children[1].textContent = pets[temp[i]].type + " - " + pets[temp[i]].breed;
+            popup.children[1].children[1].children[2].textContent = pets[temp[i]].description;
+            popup.children[1].children[1].children[3].children[0].children[1].textContent = pets[temp[i]].age;
+            popup.children[1].children[1].children[3].children[1].children[1].textContent = pets[temp[i]].inoculations;
+            popup.children[1].children[1].children[3].children[2].children[1].textContent = pets[temp[i]].diseases;
+            popup.children[1].children[1].children[3].children[3].children[1].textContent = pets[temp[i]].parasites;
+        }
         card.append(button);
         card_area.append(card);
     }
@@ -195,3 +193,7 @@ function left(){
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
+
+(function(){
+    newCards();
+ })();

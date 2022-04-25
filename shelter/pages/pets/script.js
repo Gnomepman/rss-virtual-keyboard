@@ -1,23 +1,35 @@
 let menuActivate = document.getElementById('menu-open');
 let menuDeactivate = document.getElementById('menu-close');
 let menu = document.getElementById('menu');
+let popup = document.getElementById('popup');
+let close = document.querySelector('close');
 
 menuActivate.addEventListener('click', function(){
     menu.classList.toggle('activate');
-    document.querySelector('html').style.overflow = 'hidden';
+    document.querySelector('html').style.overflowY = 'hidden';
 });
 
 menuDeactivate.addEventListener('click', function(){
     menu.classList.toggle('activate');
-    document.querySelector('html').style.overflow = 'scroll';
+    document.querySelector('html').style.overflowY = 'scroll';
 });
 
 document.onclick = function(e){
-    if (e.target.id !== menu && 
-        !e.path.includes(menuActivate) &&
-        !e.path.includes(menu)){
-        menu.classList.remove('activate');
-        document.querySelector('html').style.overflow = 'scroll';
+    if (menu.classList.contains('activate')) {
+        console.log(e);
+        if (e.target.id !== menu &&
+            !e.path.includes(menuActivate) && !e.path.includes(menu)) {
+            menu.classList.remove('activate');
+            document.querySelector('html').style.overflowY = 'scroll';
+        }
+    } else if (popup.style.display === "flex") {
+        console.log(e);
+        if (e.target.id !== popup_window &&
+            !e.path.includes(document.getElementById('card-area')) &&
+            !e.path.includes(document.getElementById('popup_window'))) {
+            popup.style.display = "none";
+            document.querySelector('html').style.overflowY = 'scroll';
+        }
     }
 }
 
@@ -240,6 +252,23 @@ function addNewCards() {
         card.append(p);
         let button = document.createElement('button');
         button.textContent = 'Learn more';
+
+        button.onclick = function(){
+            document.querySelector('html').style.overflowY = 'hidden';
+            popup.style.display = "flex";
+            popup.children[0].onclick = function(){
+                document.querySelector('html').style.overflowY = 'scroll';
+                popup.style.display = "none";
+            }
+            popup.children[1].children[0].src =  pets[shuffle[48/max_pages * (pages-1) + i]].img;
+            popup.children[1].children[1].children[0].textContent = pets[shuffle[48/max_pages * (pages-1) + i]].name;
+            popup.children[1].children[1].children[1].textContent = pets[shuffle[48/max_pages * (pages-1) + i]].type + " - " + pets[shuffle[48/max_pages * (pages-1) + i]].breed;
+            popup.children[1].children[1].children[2].textContent = pets[shuffle[48/max_pages * (pages-1) + i]].description;
+            popup.children[1].children[1].children[3].children[0].children[1].textContent = pets[shuffle[48/max_pages * (pages-1) + i]].age;
+            popup.children[1].children[1].children[3].children[1].children[1].textContent = pets[shuffle[48/max_pages * (pages-1) + i]].inoculations;
+            popup.children[1].children[1].children[3].children[2].children[1].textContent = pets[shuffle[48/max_pages * (pages-1) + i]].diseases;
+            popup.children[1].children[1].children[3].children[3].children[1].textContent = pets[shuffle[48/max_pages * (pages-1) + i]].parasites;
+        }
         card.append(button);
         card_area.append(card);
     }
