@@ -12,6 +12,15 @@ menuDeactivate.addEventListener('click', function(){
     document.querySelector('html').style.overflow = 'scroll';
 });
 
+document.onclick = function(e){
+    if (e.target.id !== menu && 
+        !e.path.includes(menuActivate) &&
+        !e.path.includes(menu)){
+        menu.classList.remove('activate');
+        document.querySelector('html').style.overflow = 'scroll';
+    }
+}
+
 let pets = [
     {
         "name": "Katrine",
