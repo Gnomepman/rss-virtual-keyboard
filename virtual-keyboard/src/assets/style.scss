@@ -18,7 +18,7 @@
 
     &:active{
         background-color: rgb(183, 183, 183);
-    }
+    }  
 }
 
 body{
@@ -68,14 +68,19 @@ body{
 
 .primary{
     @include key(rgb(167, 161, 161));
-    width: 50px;
+    width: 50px;   
 }
 
 .secondary{
     @include key(rgb(100, 97, 97));
     min-width: 50px;
     max-width: 110px;
-    color: azure;
+    color: azure; 
+}
+
+.active{
+    transition: 0.3s;
+    background-color: rgb(227, 227, 227);
 }
 
 .space{

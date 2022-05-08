@@ -1,19 +1,19 @@
-import {Key} from "./Key.js"
+import {Key} from "./key.js"
 
 export default [
-    new Key('secondary', 'TAB'),
-    new Key('primary', '', "q", "й"),
-    new Key('primary', '', "w", "ц"),
-    new Key('primary', '', "e", "у"),
-    new Key('primary', '', "r", "к"),
-    new Key('primary', '', "t", "е"),
-    new Key('primary', '', "y", "н"),
-    new Key('primary', '', "u", "г"),
-    new Key('primary', '', "i", "ш"),
-    new Key('primary', '', "o", "щ"),
-    new Key('primary', '', "p", "з"),
-    new Key('primary', '[', "", "{"),
-    new Key('primary', ']', "", "}"),
-    new Key('primary', '\\', "", "|"),
-    new Key('secondary', 'DEL')
+    new Key('secondary', 'TAB', "", '', '', 'Tab'),
+    new Key('primary', '', "q", "й", '' , 'KeyQ'),
+    new Key('primary', '', "w", "ц", '' , 'KeyW'),
+    new Key('primary', '', "e", "у", '' , 'KeyE'),
+    new Key('primary', '', "r", "к", '' , 'KeyR'),
+    new Key('primary', '', "t", "е", '' , 'KeyT'),
+    new Key('primary', '', "y", "н", '' , 'KeyY'),
+    new Key('primary', '', "u", "г", '' , 'KeyU'),
+    new Key('primary', '', "i", "ш", '' , 'KeyI'),
+    new Key('primary', '', "o", "щ", '' , 'KeyO'),
+    new Key('primary', '', "p", "з", '' , 'KeyP'),
+    new Key('primary', '[', "", "", '{', "BracketLeft"),
+    new Key('primary', ']', "", "", "}", "BracketRight"),
+    new Key('primary', '\\', "", "", "|", "Backslash"),
+    new Key('secondary', 'DEL', "", "", "|", 'Delete')
 ];
