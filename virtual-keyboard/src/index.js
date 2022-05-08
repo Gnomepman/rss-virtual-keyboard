@@ -49,23 +49,22 @@ createRow(fifth_row, fifth_row_of_keys, textarea);
 
 fifth_row.children[3].classList.add('space');
 
-//Нужна функция, которая добавит в textarea символ. Если вызвать в keypress - передать event.code
-//Если нажатием на экране - передать elem.id. По правилам, включен ли капс и т.д.
-//По хорошему, функции надо вынести в отдельные модули
 document.addEventListener('keydown', function(event){
-    console.log('keydown')
-    document.getElementById(event.code).classList.toggle("active");
-})
-
-document.addEventListener('keyup', function(event){
-    console.log('keyup')
-    document.getElementById(event.code).classList.toggle("active");
-})
-
-document.addEventListener("keypress", function(event){
-    console.log('keypressed')
+    document.getElementById(event.code).classList.add("active");
+    console.log('down', event.code);
+    event.preventDefault()
+    document.getElementById(event.code).onclick(event);
     if (event.code == 'ShiftLeft' && event.ctrlKey ){ //leftCtrl + ShiftLeft = change language
         localStorage.language === 'en' ? localStorage.language = 'ru' : localStorage.language = 'en';
         console.log(localStorage.language);
     }
+})
+
+document.addEventListener('keyup', function(event){
+    //console.log('up', event.code);
+    document.getElementById(event.code).classList.remove("active");
+})
+
+document.addEventListener("keypress", function(event){
+    //console.log('press', event.code);    
 })
