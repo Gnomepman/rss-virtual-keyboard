@@ -1,5 +1,5 @@
-//import first_row_of_keys from "./first_row_of_keys";
 import { manipulate } from "../index.js";
+import { allKeys } from "../index.js";
 
 export default function (row, array, textarea) {
     for (let i = 0; i < array.length; ++i) {
@@ -8,8 +8,6 @@ export default function (row, array, textarea) {
         elem.textContent = array[i].static_text ? array[i].static_text : array[i].en; //вот тут не понял? (кажется понял)
         elem.id = array[i].code;
         elem.onclick = function (e) {
-            //console.log('i was triggerd', e.timeStamp);
-            //textarea.focus();
             let start = textarea.selectionStart;
             let end = textarea.selectionEnd;
             switch (elem.id) {
@@ -25,7 +23,7 @@ export default function (row, array, textarea) {
                 case 'CapsLock':
                     console.log(localStorage.caps)
                     localStorage.caps === 'true' ? localStorage.caps = 'false' : localStorage.caps = 'true';
-                    for (let i = 0; i < manipulate.length; ++i) {
+                    for (let i = 0; i < 4; ++i) {
                         for (let j = 0; j < manipulate[i].length; ++j) {
                             if (/[\w]/.test(manipulate[i][j].textContent) && manipulate[i][j].classList.contains('primary')) {
                                 localStorage.caps === 'true' ? manipulate[i][j].textContent = manipulate[i][j].textContent.toUpperCase() :
@@ -40,7 +38,51 @@ export default function (row, array, textarea) {
                     break;
                 case 'ShiftLeft':
                     //меняет регистр кнопок (не только букв)
-                    localStorage.shift = !JSON.parse(localStorage.shift);
+                    localStorage.shift === 'true' ? localStorage.shift = 'false' : localStorage.shift = 'true';
+                    for (let i = 0; i < 4; ++i) {
+                        for (let j = 0; j < manipulate[i].length; ++j) {
+                            if (manipulate[i][j].classList.contains('primary')) {
+                                if (localStorage.shift === 'true') {
+                                    let input = ''
+                                    if (i === 0 & j === 0){
+                                        manipulate[i][j].textContent = allKeys[i][j].shift;
+                                        continue;
+                                    } 
+                                    if (localStorage.language = 'en'){
+                                        input = allKeys[i][j].en;
+                                    } else {
+                                        input = allKeys[i][j].ru;
+                                    }
+                                    if (allKeys[i][j].shift !== ""){
+                                        input = allKeys[i][j].shift;
+                                    }
+                                    input = input.toUpperCase();
+                                    manipulate[i][j].textContent = input;
+                                } else {
+                                    let input = '';
+                                    if (i === 0 & j === 0){
+                                        if (localStorage.language = 'en'){
+                                            input = allKeys[i][j].en;
+                                        } else {
+                                            input = allKeys[i][j].ru;
+                                        }
+                                        continue;
+                                    }
+                                    if (allKeys[i][j].static_text !== ''){
+                                        input = allKeys[i][j].static_text;
+                                    } else {
+                                        if (localStorage.language = 'en'){
+                                            input = allKeys[i][j].en;
+                                        } else {
+                                            input = allKeys[i][j].ru;
+                                        }
+                                    }
+                                    
+                                    manipulate[i][j].textContent = input;
+                                }
+                            }
+                        }
+                    }
                     break;
                 case 'ArrowUp':
                     textarea.setRangeText(array[i].static_text, start, end, 'end');
@@ -78,7 +120,7 @@ export default function (row, array, textarea) {
                     } else {
                         localStorage.language == 'en' ? insert = array[i].en : insert = array[i].ru;
                     }
-                    if (localStorage.caps === 'true') {
+                    if (localStorage.caps === 'true' || localStorage.shift === 'true') {
                         insert = insert.toUpperCase();
                     }
                     textarea.setRangeText(insert, start, end, 'end');

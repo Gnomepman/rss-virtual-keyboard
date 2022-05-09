@@ -6,22 +6,16 @@ import {default as third_row_of_keys} from './keyboard/third_row_of_keys.js'
 import {default as forth_row_of_keys} from './keyboard/forth_row_of_keys.js'
 import {default as fifth_row_of_keys} from './keyboard/fifth_row_of_keys.js'
 
-//в localstore можно только строки 
-if(!localStorage.language){
-    localStorage.language = 'en';
-}
-
-(function(){
+(function () {
+    //в localstore можно только строки 
+    if (!localStorage.language) {
+        localStorage.language = 'en';
+    }
     localStorage.caps = 'false';
     localStorage.shift = 'false';
 }());
-// if(localStorage.caps){
-//     localStorage.caps = 'false';
-// }
-// if(!localStorage.shift){
-//     localStorage.shift = 'false';
-// }
 
+const allKeys = [[...first_row_of_keys],[...second_row_of_keys],[...third_row_of_keys],[...forth_row_of_keys],[...fifth_row_of_keys]];
 const body = document.querySelector("body");
 const wrapper = document.createElement('div');
 const textarea = document.createElement('textarea');
@@ -38,7 +32,6 @@ wrapper.appendChild(textarea);
 keyboard.classList.add('keyboard');
 wrapper.appendChild(keyboard);
 
-//А надо оно?
 first_row.id = 'row_first';
 second_row.id = 'row_second';
 third_row.id = 'row_third';
@@ -69,38 +62,25 @@ const manipulate = [
 document.addEventListener('keydown', function(event){
     document.getElementById(event.code).classList.add("active");
     event.preventDefault();
+    
+    //leftCtrl + AltLeft = change language
+    if (event.code == 'AltLeft' && event.ctrlKey ){ 
+        localStorage.language === 'en' ? localStorage.language = 'ru' : localStorage.language = 'en';
+        console.log(localStorage.language);
+        return;
+    }
     document.getElementById(event.code).onclick(event);
     if (event.repeat === true) {
         document.getElementById(event.code).onclick(event);
     }
-    //leftCtrl + ShiftLeft = change language
-    if (event.code == 'ShiftLeft' && event.ctrlKey ){ 
-        localStorage.language === 'en' ? localStorage.language = 'ru' : localStorage.language = 'en';
-        console.log(localStorage.language);//вот тут вместо консоли надо будет обновлят какой-то элемент на странице (не надо, по расскладке будет видно)
-    }
-
-    
 })
 
 document.addEventListener('keyup', function(event){
     document.getElementById(event.code).classList.remove("active");
-})
-
-document.addEventListener("keypress", function(event){
-    console.log('press', event.code);
-    // if (event.code === 'CapsLock'){
-    //     for (let i = 0; i < manipulate.length; ++i){
-    //         for (let j = 0; j < manipulate[i].length; ++j){
-    //             if (/[\w]/.test(manipulate[i][j].textContent)){
-    //                 if (localStorage.caps = 'true'){
-    //                     manipulate[i][j].textContent = manipulate[i][j].textContent.toUpperCase();
-    //                 } else {
-    //                     manipulate[i][j].textContent = manipulate[i][j].textContent.toLowerCase();
-    //                 }
-    //             }
-    //         }
-    //     }
-    // } 
+    if (event.code == "ShiftLeft") {
+        document.getElementById("ShiftLeft").onclick(event);
+    }
 })
 
 export {manipulate};
+export {allKeys};
