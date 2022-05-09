@@ -1,3 +1,5 @@
+//import first_row_of_keys from "./first_row_of_keys";
+
 export default function (row, array, textarea) {
     for (let i = 0; i < array.length; ++i) {
         const elem = document.createElement("div");
@@ -20,7 +22,7 @@ export default function (row, array, textarea) {
                     textarea.setRangeText('', start, end + 1, 'end');
                     break;
                 case 'CapsLock':
-                    //меняет регистр кнопок (букв)
+                    localStorage.caps = !JSON.parse(localStorage.caps);
                     break;
                 case 'Enter':
                     textarea.setRangeText('\n', start, end, 'end');
@@ -62,6 +64,9 @@ export default function (row, array, textarea) {
                         insert = array[i].static_text;
                     } else {
                         localStorage.language == 'en' ? insert = array[i].en : insert = array[i].ru;
+                    }
+                    if(localStorage.caps === 'true'){
+                        insert = insert.toUpperCase();
                     }
                     textarea.setRangeText(insert, start, end, 'end');
                     break;

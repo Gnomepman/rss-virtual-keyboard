@@ -1,7 +1,7 @@
 import {Key} from "./key.js"
 
 export default [
-    new Key('primary', '`', "", "", "~", "Backquote"),
+    new Key('primary', '', "`", "ё", "~", "Backquote"),
     new Key('primary', '1', "", "", "!", "Digit1"),
     new Key('primary', '2', "", "", "@", "Digit2"),
     new Key('primary', '3', "", "", "#", "Digit3"),
