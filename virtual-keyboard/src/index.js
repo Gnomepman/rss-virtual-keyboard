@@ -7,7 +7,6 @@ import {default as forth_row_of_keys} from './keyboard/forth_row_of_keys.js'
 import {default as fifth_row_of_keys} from './keyboard/fifth_row_of_keys.js'
 
 (function () {
-    //в localstore можно только строки 
     if (!localStorage.language) {
         localStorage.language = 'en';
     }
@@ -15,7 +14,6 @@ import {default as fifth_row_of_keys} from './keyboard/fifth_row_of_keys.js'
     localStorage.shift = 'false';
 }());
 
-const allKeys = [[...first_row_of_keys],[...second_row_of_keys],[...third_row_of_keys],[...forth_row_of_keys],[...fifth_row_of_keys]];
 const body = document.querySelector("body");
 const wrapper = document.createElement('div');
 const textarea = document.createElement('textarea');
@@ -62,15 +60,20 @@ const manipulate = [
     [...document.getElementById("row_third").children],
     [...document.getElementById("row_forth").children]
 ];
+const allKeys = [
+    [...first_row_of_keys],
+    [...second_row_of_keys],
+    [...third_row_of_keys],
+    [...forth_row_of_keys],
+    [...fifth_row_of_keys]
+];
 
 document.addEventListener('keydown', function(event){
     document.getElementById(event.code).classList.add("active");
     event.preventDefault();
     
-    //leftCtrl + AltLeft = change language
     if (event.code == 'AltLeft' && event.ctrlKey ){ 
         localStorage.language === 'en' ? localStorage.language = 'ru' : localStorage.language = 'en';
-        console.log(localStorage.language);
         for (let i = 0; i < 4; ++i) {
             for (let j = 0; j < manipulate[i].length; ++j) {   
                 if (manipulate[i][j].classList.contains('secondary') || allKeys[i][j].en === ''){

@@ -21,17 +21,15 @@ export default function (row, array, textarea) {
                     textarea.setRangeText('', start, end + 1, 'end');
                     break;
                 case 'CapsLock':
-                    console.log(localStorage.caps)
                     localStorage.caps === 'true' ? localStorage.caps = 'false' : localStorage.caps = 'true';
                     for (let i = 0; i < 4; ++i) {
                         for (let j = 0; j < manipulate[i].length; ++j) {
-                            if (/*/[a-zа-я]/.test(manipulate[i][j].textContent) &&*/ manipulate[i][j].classList.contains('primary')) {
+                            if (manipulate[i][j].classList.contains('primary')) {
                                 localStorage.caps === 'true' ? manipulate[i][j].textContent = manipulate[i][j].textContent.toUpperCase() :
                                     manipulate[i][j].textContent = manipulate[i][j].textContent.toLowerCase();
                             }
                         }
                     }
-
                     break;
                 case 'Enter':
                     textarea.setRangeText('\n', start, end, 'end');
