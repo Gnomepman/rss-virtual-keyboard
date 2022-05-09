@@ -20,6 +20,7 @@ const body = document.querySelector("body");
 const wrapper = document.createElement('div');
 const textarea = document.createElement('textarea');
 const keyboard = document.createElement('div');
+const description = document.createElement('div');
 const first_row = document.createElement('div');
 const second_row = document.createElement('div');
 const third_row = document.createElement('div');
@@ -31,6 +32,9 @@ body.appendChild(wrapper);
 wrapper.appendChild(textarea);
 keyboard.classList.add('keyboard');
 wrapper.appendChild(keyboard);
+description.classList.add('description');
+description.textContent = 'Клавиатура создана на Windows, для переключения языка - левые Ctrl + Alt'
+wrapper.appendChild(description)
 
 first_row.id = 'row_first';
 second_row.id = 'row_second';
