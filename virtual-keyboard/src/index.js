@@ -50,13 +50,17 @@ createRow(fifth_row, fifth_row_of_keys, textarea);
 fifth_row.children[3].classList.add('space');
 
 document.addEventListener('keydown', function(event){
+    
+   // console.log(event);
     document.getElementById(event.code).classList.add("active");
-    console.log('down', event.code);
     event.preventDefault()
     document.getElementById(event.code).onclick(event);
+    if (event.repeat === true) {
+        document.getElementById(event.code).onclick(event);
+    }
     if (event.code == 'ShiftLeft' && event.ctrlKey ){ //leftCtrl + ShiftLeft = change language
         localStorage.language === 'en' ? localStorage.language = 'ru' : localStorage.language = 'en';
-        console.log(localStorage.language);
+        console.log(localStorage.language);//вот тут вместо консоли надо будет обновлят какой-то элемент на странице
     }
 })
 
