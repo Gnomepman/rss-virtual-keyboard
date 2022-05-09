@@ -43,14 +43,19 @@ export default function (row, array, textarea) {
                         for (let j = 0; j < manipulate[i].length; ++j) {
                             if (manipulate[i][j].classList.contains('primary')) {
                                 if (localStorage.shift === 'true') {
-                                    let input = ''
                                     if (i === 0 & j === 0){
-                                        manipulate[i][j].textContent = allKeys[i][j].shift;
+                                        //manipulate[i][j].textContent = allKeys[i][j].shift;
+                                        if (localStorage.language === 'ru'){
+                                            manipulate[i][j].textContent = allKeys[i][j].ru.toUpperCase();
+                                        } else {
+                                            manipulate[i][j].textContent = allKeys[i][j].shift;
+                                        }
                                         continue;
                                     } 
-                                    if (localStorage.language = 'en'){
+                                    let input = ''
+                                    if (localStorage.language === 'en'){
                                         input = allKeys[i][j].en;
-                                    } else {
+                                    } else{
                                         input = allKeys[i][j].ru;
                                     }
                                     if (allKeys[i][j].shift !== ""){
@@ -58,20 +63,20 @@ export default function (row, array, textarea) {
                                     }
                                     input = input.toUpperCase();
                                     manipulate[i][j].textContent = input;
-                                } else {
-                                    let input = '';
+                                } else {   
                                     if (i === 0 & j === 0){
-                                        if (localStorage.language = 'en'){
-                                            input = allKeys[i][j].en;
+                                        if (localStorage.language === 'ru'){
+                                            manipulate[i][j].textContent = allKeys[i][j].ru.toLowerCase();
                                         } else {
-                                            input = allKeys[i][j].ru;
+                                            manipulate[i][j].textContent = allKeys[i][j].en;
                                         }
                                         continue;
                                     }
+                                    let input = '';
                                     if (allKeys[i][j].static_text !== ''){
                                         input = allKeys[i][j].static_text;
                                     } else {
-                                        if (localStorage.language = 'en'){
+                                        if (localStorage.language === 'en'){
                                             input = allKeys[i][j].en;
                                         } else {
                                             input = allKeys[i][j].ru;
@@ -118,7 +123,7 @@ export default function (row, array, textarea) {
                     if (array[i].static_text) {
                         insert = array[i].static_text;
                     } else {
-                        localStorage.language == 'en' ? insert = array[i].en : insert = array[i].ru;
+                        localStorage.language === 'en' ? insert = array[i].en : insert = array[i].ru;
                     }
                     if (localStorage.caps === 'true' || localStorage.shift === 'true') {
                         insert = insert.toUpperCase();

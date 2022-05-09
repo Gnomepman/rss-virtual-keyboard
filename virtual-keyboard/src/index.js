@@ -67,6 +67,23 @@ document.addEventListener('keydown', function(event){
     if (event.code == 'AltLeft' && event.ctrlKey ){ 
         localStorage.language === 'en' ? localStorage.language = 'ru' : localStorage.language = 'en';
         console.log(localStorage.language);
+        for (let i = 0; i < 4; ++i) {
+            for (let j = 0; j < manipulate[i].length; ++j) {   
+                if (manipulate[i][j].classList.contains('secondary') || allKeys[i][j].en === ''){
+                    continue;
+                }
+                let input = '';
+                if (localStorage.language === 'en'){
+                    input = allKeys[i][j].en;
+                } else {
+                    input = allKeys[i][j].ru;
+                }
+                if (localStorage.caps == 'true' || localStorage.shift == 'true'){
+                    input = input.toUpperCase();
+                }
+                manipulate[i][j].textContent = input;
+            }
+        }
         return;
     }
     document.getElementById(event.code).onclick(event);
