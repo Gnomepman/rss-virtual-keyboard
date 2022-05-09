@@ -25,7 +25,7 @@ export default function (row, array, textarea) {
                     localStorage.caps === 'true' ? localStorage.caps = 'false' : localStorage.caps = 'true';
                     for (let i = 0; i < 4; ++i) {
                         for (let j = 0; j < manipulate[i].length; ++j) {
-                            if (/[\w]/.test(manipulate[i][j].textContent) && manipulate[i][j].classList.contains('primary')) {
+                            if (/*/[a-zа-я]/.test(manipulate[i][j].textContent) &&*/ manipulate[i][j].classList.contains('primary')) {
                                 localStorage.caps === 'true' ? manipulate[i][j].textContent = manipulate[i][j].textContent.toUpperCase() :
                                     manipulate[i][j].textContent = manipulate[i][j].textContent.toLowerCase();
                             }
@@ -37,7 +37,6 @@ export default function (row, array, textarea) {
                     textarea.setRangeText('\n', start, end, 'end');
                     break;
                 case 'ShiftLeft':
-                    //меняет регистр кнопок (не только букв)
                     localStorage.shift === 'true' ? localStorage.shift = 'false' : localStorage.shift = 'true';
                     for (let i = 0; i < 4; ++i) {
                         for (let j = 0; j < manipulate[i].length; ++j) {
