@@ -1,4 +1,5 @@
 //import first_row_of_keys from "./first_row_of_keys";
+import { manipulate } from "../index.js";
 
 export default function (row, array, textarea) {
     for (let i = 0; i < array.length; ++i) {
@@ -22,19 +23,31 @@ export default function (row, array, textarea) {
                     textarea.setRangeText('', start, end + 1, 'end');
                     break;
                 case 'CapsLock':
-                    localStorage.caps = !JSON.parse(localStorage.caps);
+                    console.log(localStorage.caps)
+                    localStorage.caps === 'true' ? localStorage.caps = 'false' : localStorage.caps = 'true';
+                    for (let i = 0; i < manipulate.length; ++i) {
+                        for (let j = 0; j < manipulate[i].length; ++j) {
+                            if (/[\w]/.test(manipulate[i][j].textContent) && manipulate[i][j].classList.contains('primary')) {
+                                localStorage.caps === 'true' ? manipulate[i][j].textContent = manipulate[i][j].textContent.toUpperCase() :
+                                    manipulate[i][j].textContent = manipulate[i][j].textContent.toLowerCase();
+                            }
+                        }
+                    }
+
                     break;
                 case 'Enter':
                     textarea.setRangeText('\n', start, end, 'end');
                     break;
                 case 'ShiftLeft':
                     //меняет регистр кнопок (не только букв)
+                    localStorage.shift = !JSON.parse(localStorage.shift);
                     break;
                 case 'ArrowUp':
                     textarea.setRangeText(array[i].static_text, start, end, 'end');
                     break;
                 case 'ShiftRight':
                     //меняет регистр кнопок (не только букв)
+                    localStorage.shift = !JSON.parse(localStorage.shift);
                     break;
                 case 'ControlLeft':
                     break;
@@ -65,7 +78,7 @@ export default function (row, array, textarea) {
                     } else {
                         localStorage.language == 'en' ? insert = array[i].en : insert = array[i].ru;
                     }
-                    if(localStorage.caps === 'true'){
+                    if (localStorage.caps === 'true') {
                         insert = insert.toUpperCase();
                     }
                     textarea.setRangeText(insert, start, end, 'end');
@@ -75,5 +88,3 @@ export default function (row, array, textarea) {
         row.appendChild(elem);
     }
 }
-
-//onclick вынести в отдельный модуль

@@ -10,9 +10,17 @@ import {default as fifth_row_of_keys} from './keyboard/fifth_row_of_keys.js'
 if(!localStorage.language){
     localStorage.language = 'en';
 }
-if(!localStorage.caps){
-    localStorage.caps = false;
-}
+
+(function(){
+    localStorage.caps = 'false';
+    localStorage.shift = 'false';
+}());
+// if(localStorage.caps){
+//     localStorage.caps = 'false';
+// }
+// if(!localStorage.shift){
+//     localStorage.shift = 'false';
+// }
 
 const body = document.querySelector("body");
 const wrapper = document.createElement('div');
@@ -57,19 +65,21 @@ const manipulate = [
     [...document.getElementById("row_third").children],
     [...document.getElementById("row_forth").children]
 ];
-//console.log(manipulate);
 
 document.addEventListener('keydown', function(event){
     document.getElementById(event.code).classList.add("active");
-    event.preventDefault()
+    event.preventDefault();
     document.getElementById(event.code).onclick(event);
     if (event.repeat === true) {
         document.getElementById(event.code).onclick(event);
     }
-    if (event.code == 'ShiftLeft' && event.ctrlKey ){ //leftCtrl + ShiftLeft = change language
+    //leftCtrl + ShiftLeft = change language
+    if (event.code == 'ShiftLeft' && event.ctrlKey ){ 
         localStorage.language === 'en' ? localStorage.language = 'ru' : localStorage.language = 'en';
         console.log(localStorage.language);//вот тут вместо консоли надо будет обновлят какой-то элемент на странице (не надо, по расскладке будет видно)
     }
+
+    
 })
 
 document.addEventListener('keyup', function(event){
@@ -77,5 +87,20 @@ document.addEventListener('keyup', function(event){
 })
 
 document.addEventListener("keypress", function(event){
-    //console.log('press', event.code);    
+    console.log('press', event.code);
+    // if (event.code === 'CapsLock'){
+    //     for (let i = 0; i < manipulate.length; ++i){
+    //         for (let j = 0; j < manipulate[i].length; ++j){
+    //             if (/[\w]/.test(manipulate[i][j].textContent)){
+    //                 if (localStorage.caps = 'true'){
+    //                     manipulate[i][j].textContent = manipulate[i][j].textContent.toUpperCase();
+    //                 } else {
+    //                     manipulate[i][j].textContent = manipulate[i][j].textContent.toLowerCase();
+    //                 }
+    //             }
+    //         }
+    //     }
+    // } 
 })
+
+export {manipulate};
