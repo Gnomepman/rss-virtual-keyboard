@@ -94,7 +94,7 @@ document.addEventListener('keydown', function(event){
 
 document.addEventListener('keyup', function(event){
     document.getElementById(event.code).classList.remove("active");
-    if (event.code == "ShiftLeft") {
+    if (event.code == "ShiftLeft" || event.code == "ShiftRight") {
         document.getElementById("ShiftLeft").onclick(event);
     }
 })
