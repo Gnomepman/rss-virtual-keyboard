@@ -1,2 +1,2 @@
-# gnomepman-JSFE2022Q1
-Private repository for @gnomepman
+# Virtual keyboard
+Deploy: https://gnomepman.github.io/rss-virtual-keyboard/virtual-keyboard/index.html
